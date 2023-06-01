@@ -1,4 +1,5 @@
 const persona = {
+    id: '0',
     nombres: '',
     apellidos: '',
     telefono: '',
