@@ -1,6 +1,10 @@
 // esperando para tener lo conocimientos para crear una base de datos
 const persona = {
+<<<<<<< HEAD
     id:0 ,
+=======
+    id: '0',
+>>>>>>> 2592685fe04d96bbd9400cee32521ecbd4af973b
     nombres: '',
     apellidos: '',
     telefono: '',
