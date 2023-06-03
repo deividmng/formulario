@@ -1,3 +1,4 @@
+// esperando para tener lo conocimientos para crear una base de datos
 const persona = {
     id:0 ,
     nombres: '',
