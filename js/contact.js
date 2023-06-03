@@ -1,74 +1,68 @@
 const persona = {
+    id:0 ,
     nombres: '',
     apellidos: '',
     telefono: '',
     email: '',
     ciudad: '',
     pais: ''
-  }
-  
-
+}
 
 let personasArray = [];
 
-
-function processContactForm(e) {  
-    persona.nombres= document.forms["fcontact"]["fnames"].value;
-    persona.nombres= document.forms["fcontact"]["fsurname"].value;
-    persona.nombres= document.forms["fcontact"]["fphone"].value;
-    persona.nombres= document.forms["fcontact"]["femail"].value;
-    persona.nombres= document.forms["fcontact"]["fcity"].value;
-    persona.nombres= document.forms["fcontact"]["fcountry"].value;
-
-    // ahora vamos a crear un Json para guardar los datos recogidos del form
+function processContactForm(e) {
+    persona.nombres = document.forms["fcontact"]["fnames"].value;
+    persona.apellidos = document.forms["fcontact"]["fsurname"].value;
+    persona.telefono = document.forms["fcontact"]["fphone"].value;
+    persona.email = document.forms["fcontact"]["femail"].value;
+    persona.ciudad = document.forms["fcontact"]["fcity"].value;
+    persona.pais = document.forms["fcontact"]["fcountry"].value;
+    persona.id = personasArray.length;// el .length es para que cuente
 
     let personajson = JSON.stringify(persona);
 
     personasArray.push(personajson);
 
     e.preventDefault();
-    alert("Datos guardados con éxito"+personasArray.toString());
- 
+    alert("Datos guardados con éxito" + personasArray.toString());
 
-    
 }
-function listarcontactos(){
-  let dimicTable = "";
-  dimicTable += "<table>";
-  dimicTable += "<tr>";
-  dimicTable += "<th>Nombre</th>";
-  dimicTable += "<th>Aperllidos</th>";
-  dimicTable += "<th>Telefonos</th>";
-  dimicTable += " <th>Email</th>";
-  dimicTable += " </tr>";
-  // filas con la informacion
-  for(let i=0; i< personasArray.length;i++ ){
-  dimicTable += "<tr>";
-    let personaobjeto =JSON.parse(personasArray[i]);
-    dimicTable += "<td>";
-    dimicTable += personaobjeto.nombres;
-    dimicTable += "</td>";
-    dimicTable += "<td>";
-    dimicTable += personaobjeto.apellidos;
-    dimicTable += "</td>";
-    dimicTable += "<td>";
-    dimicTable += personaobjeto.telefono;
-    dimicTable += "</td>";
-    dimicTable += "<td>";
-    dimicTable += personaobjeto.email;
-    dimicTable += "</td>";
-    dimicTable += "<td>";
-    dimicTable += personaobjeto.ciudad;
-    dimicTable += "</td>";
-    dimicTable += "<td>";
-    dimicTable += personaobjeto.pais;
-    dimicTable += "</td>";
-    dimicTable += "</tr>";
-  dimicTable += "</table>";
-  }
 
+function listarcontactos() {
+    let dinmicTable = "";
+    //cabecera de la tabla
+    dinmicTable += "<table class='table' ";
+    dinmicTable += "<tr>";
+    dinmicTable += "<th>ID</th>";
+    dinmicTable += "<th>Nombres</th>";
+    dinmicTable += "<th>Appelidos</th>";
+    dinmicTable += "<th>Telefonos</th>";
+    dinmicTable += "<th>Email</th>";
+    dinmicTable += "</tr>";
+//filas con la informacion
+for(let i=0; i< personasArray.length;i++){
+    dinmicTable += "<tr>";
+    let personaobjecto = JSON.parse(personasArray[i]);
+  // recuerda pornerle el Id
+    dinmicTable += "<td>";
+    dinmicTable += personaobjecto.id;
+    dinmicTable += "</td>";
+    dinmicTable += "<td>";
+    dinmicTable += personaobjecto.nombres;
+    dinmicTable += "</td>";
+    dinmicTable += "<td>";
+    dinmicTable += personaobjecto.apellidos;
+    dinmicTable += "</td>";
+    dinmicTable += "<td>";
+    dinmicTable += personaobjecto.telefono;
+    dinmicTable += "</td>";
+    dinmicTable += "<td>";
+    dinmicTable += personaobjecto.email;
+    dinmicTable += "</td>";
+    dinmicTable += "</tr>";
+    dinmicTable += "<tr>";
+}
 
-  document.getElementById("tableContact").innerHTML = dimicTable;
-
-
+    dinmicTable += "</table>";
+    document.getElementById("tablecontact").innerHTML = dinmicTable;
 }

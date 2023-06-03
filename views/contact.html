@@ -27,7 +27,7 @@
                 <!--Definir titulo del formulario-->
                 <h4 class="card-title mb-3 text-primary text-uppercase">Formulario de contacto</h4>
                 <!--Definir el formulario-->
-                <form action="" name="fcontact" onsubmit="processContactForm(event,'fcontact')" 
+                <form action="" name="fcontact" onsubmit="processContactForm(event,'fcontact')" target="_blank"
                     method="get">
                     <!--Definir semento con la clase fila-->
                     <div class="row">
@@ -62,21 +62,18 @@
                         </div>
                     </div>
                     <br>
-                    <button class="btn btn-primary" style="border-radius:0px" type="submit">Guardar</button>
+                    <button class="btn-primary" style="border-radius:0px" type="submit">Guardar</button>
                 </form>
                 <br />
-                <button class="btn btn-primary" style="border-radius:0px" type="submit"
+                <button class="btn-primary" style="border-radius:0px" type="submit"
                     onclick="window.location.href='../index.html'">Atras</button>
-           
-                    <div id="tablecontac">
-                        <button class="btn btn-primary" style="border-radius:0px" type="submit"
-                           onclick="listarcontactos()">Listar</button>
-                   </div>
+            
+                    <button class="btn-primary" style="border-radius:0px" type="submit"
+                    onclick="listarcontactos()">Listar</button>
+              </div>
+            <div id="tablecontact">
 
-                   <div id="tableContact"></div>
-
-
-                </div>
+            </div>
         </div>
     </div>    
 </body>

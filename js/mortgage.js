@@ -36,18 +36,13 @@ function ouputMortgage(finalMortgage){
    document.getElementById("omontoprestamo").innerHTML = ValueToDollar(finalMortgage.totalPrestamo);
    document.getElementById("ocuota").innerHTML = ValueToDollar(finalMortgage.cuotaMensual);
    var totalPrestamoPorcentaje=0;
-   totalPrestamoPorcentaje = finalMortgage * 100 / finalMortgage.costoTotalInmueble;
-   alert(totalPrestamoPorcentaje); 
-   //<output  class="form-control" id="omontoprestamo">0</output>
-    if(totalPrestamoPorcentaje > 90){
-        document.getElementById("omontoprestamo").className += " alerPorcentaje";
-    }else{
-        document.getElementById("omontoprestamo").className = "form-control";
-        
-    }
-
-
-
+   totalPrestamoPorcentaje = finalMortgage.totalPrestamo * 100 / finalMortgage.costoTotalInmueble;
+   alert(totalPrestamoPorcentaje);
+   if(totalPrestamoPorcentaje > 90){
+     document.getElementById("omontoprestamo").className += " alertaPorcentaje";
+   }else{
+    document.getElementById("omontoprestamo").className = "form-control";
+   }
 }
 
 function resetform(){
